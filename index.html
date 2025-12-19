@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Kadav | Cloud Engineer & GenAI Practitioner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        aws: '#FF9900',
+                        tech: '#00D1FF',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: radial-gradient(circle at 50% 50%, #111827 0%, #000000 100%);
+            color: #e2e8f0;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #334155;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass-card border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold tracking-tighter text-white">KK<span class="text-tech">.</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#skills" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#experience" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#projects" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#contact" class="bg-tech text-black hover:bg-white transition-colors px-4 py-2 rounded-full text-sm font-bold">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+
+        <div class="text-center z-10 px-4">
+            <p class="text-tech font-medium mb-4 tracking-widest uppercase">Hello, I am</p>
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 text-white tracking-tight">Kunal Kadav</h1>
+            <div class="text-2xl md:text-4xl text-gray-400 font-light h-12">
+                I am a <span id="typewriter" class="text-white font-semibold border-r-4 border-tech pr-1"></span>
+            </div>
+            
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#projects" class="border border-tech text-tech hover:bg-tech hover:text-black transition-all px-8 py-3 rounded-full font-bold">View Work</a>
+                <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="glass-card hover:bg-gray-800 text-white transition-all px-8 py-3 rounded-full font-bold flex items-center gap-2">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            
+            <div class="mt-12 flex justify-center gap-6 text-gray-500">
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-aws text-3xl mb-2 text-aws"></i>
+                    <span class="text-xs">Certified x4</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-brain text-3xl mb-2 text-purple-400"></i>
+                    <span class="text-xs">GenAI Pro</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-server text-3xl mb-2 text-green-400"></i>
+                    <span class="text-xs">DevOps</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-black/30">
+        <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-8 text-white"><span class="text-tech">01.</span> About Me</h2>
+            <div class="glass-card p-8 rounded-2xl">
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    I am an <strong class="text-white">AWS Certified Cloud Engineer</strong> with <strong class="text-white">1.6 years of experience</strong> at Tata Consultancy Services. I specialize in automating complex cloud infrastructure, building CI/CD pipelines, and integrating <strong class="text-tech">Generative AI (AWS Bedrock)</strong> into enterprise workflows.
+                </p>
+                <br>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Recently, I won the <strong class="text-white">TCS AI Challenge</strong> by developing a validation automation tool that reduced manual workload by 25%. I am passionate about reducing "toil" through Python scripting and intelligent automation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">02.</span> Technical Arsenal</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
+                    <i class="fab fa-aws text-4xl text-aws mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">AWS Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">EC2 & S3</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Lambda</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">VPC & IAM</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">RDS</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">CloudFormation</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
+                    <i class="fas fa-infinity text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">DevOps</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Jenkins</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">CodePipeline</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Docker</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Git</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
+                    <i class="fas fa-robot text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Generative AI</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">AWS Bedrock</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Claude Models</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Prompt Eng.</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Python AI</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
+                    <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Coding</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Python</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Java</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Shell Script</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">SQL</span>
+                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Spring Boot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-black/30">
+        <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">03.</span> Experience</h2>
+            
+            <div class="relative timeline-line pl-12 space-y-12">
+                <div class="relative">
+                    <div class="absolute -left-12 mt-1.5 w-4 h-4 rounded-full bg-tech shadow-[0_0_10px_#00D1FF]"></div>
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-tech">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Assistant System Engineer</h3>
+                                <p class="text-tech">Tata Consultancy Services (TCS)</p>
+                            </div>
+                            <span class="text-gray-400 text-sm bg-gray-900 px-3 py-1 rounded-full h-fit mt-2 md:mt-0">May 2024 - Present</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                            <li><span class="text-white font-medium">Winner of TCS AI Challenge</span> for creating a GenAI automation tool.</li>
+                            <li>Automated 10+ operational tasks using Python, saving <span class="text-white">5-8 hours weekly</span>.</li>
+                            <li>Reduced CI/CD deployment time from <span class="text-white">2 hours to 15 minutes</span>.</li>
+                            <li>Manage 30+ EC2 instances and ensure security compliance using IAM & VPC.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-12 mt-1.5 w-4 h-4 rounded-full bg-gray-600"></div>
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-gray-600">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Android Developer Intern</h3>
+                                <p class="text-gray-400">TrickySys Technologies</p>
+                            </div>
+                            <span class="text-gray-400 text-sm bg-gray-900 px-3 py-1 rounded-full h-fit mt-2 md:mt-0">Nov 2021 - Apr 2022</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">Developed 2 Android apps using Java and REST APIs, achieving 1000+ downloads.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">04.</span> Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-brain text-4xl text-purple-400"></i>
+                            <div class="flex gap-2">
+                                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">GenAI Validation System</h3>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Winner of TCS AI Challenge. An automated validation workflow using AWS Bedrock (Claude) and Lambda that reduced manual review time by 25%.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-tech">
+                            <span class="bg-gray-900 px-2 py-1 rounded">AWS Bedrock</span>
+                            <span class="bg-gray-900 px-2 py-1 rounded">Python Lambda</span>
+                            <span class="bg-gray-900 px-2 py-1 rounded">S3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-rocket text-4xl text-blue-400"></i>
+                            <div class="flex gap-2">
+                                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">Automated CI/CD Pipeline</h3>
+                        <p class="text-gray-400 text-sm mb-6">
+                            A complete Jenkins and AWS CodePipeline setup for Spring Boot microservices. Reduced deployment time from 2 hours to 15 minutes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-tech">
+                            <span class="bg-gray-900 px-2 py-1 rounded">Jenkins</span>
+                            <span class="bg-gray-900 px-2 py-1 rounded">CodePipeline</span>
+                            <span class="bg-gray-900 px-2 py-1 rounded">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-black/30">
+        <div class="max-w-5xl mx-auto px-6 text-center scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white">Certifications</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="border border-aws text-aws px-6 py-3 rounded-full font-medium hover:bg-aws hover:text-black transition-all cursor-default">AWS Solutions Architect Associate</span>
+                <span class="border border-aws text-aws px-6 py-3 rounded-full font-medium hover:bg-aws hover:text-black transition-all cursor-default">AWS Developer Associate</span>
+                <span class="border border-purple-500 text-purple-400 px-6 py-3 rounded-full font-medium hover:bg-purple-500 hover:text-white transition-all cursor-default">AWS AI Practitioner</span>
+                <span class="border border-gray-600 text-gray-400 px-6 py-3 rounded-full font-medium hover:bg-white hover:text-black transition-all cursor-default">Google Cloud GenAI Leader</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 text-center">
+        <div class="max-w-2xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-4xl font-bold mb-6 text-white">Let's Connect</h2>
+            <p class="text-gray-400 mb-10">
+                I'm currently open to opportunities in Cloud Engineering and GenAI. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            <a href="mailto:kunalkadav1904@gmail.com" class="bg-white text-black hover:bg-tech transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center gap-2">
+                <i class="far fa-envelope"></i> Say Hello
+            </a>
+            <div class="mt-12 flex justify-center gap-8">
+                <a href="https://github.com/kunalkadav" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <footer class="mt-20 text-gray-600 text-sm">
+                <p>&copy; 2025 Kunal Kadav. Built with Cloud & Coffee.</p>
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        // Typewriter Effect
+        const words = ["Cloud Engineer.", "AWS Certified.", "GenAI Practitioner.", "DevOps Enthusiast."];
+        let i = 0;
+        let timer;
+
+        function typeWriter() {
+            const heading = document.getElementById("typewriter");
+            const word = words[i];
+            const current = heading.textContent;
+
+            if (!heading.classList.contains("deleting")) {
+                if (current.length < word.length) {
+                    heading.textContent = word.substring(0, current.length + 1);
+                    timer = setTimeout(typeWriter, 100);
+                } else {
+                    heading.classList.add("deleting");
+                    timer = setTimeout(typeWriter, 2000);
+                }
+            } else {
+                if (current.length > 0) {
+                    heading.textContent = word.substring(0, current.length - 1);
+                    timer = setTimeout(typeWriter, 50);
+                } else {
+                    heading.classList.remove("deleting");
+                    i = (i + 1) % words.length;
+                    timer = setTimeout(typeWriter, 500);
+                }
+            }
+        }
+
+        // Scroll Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-element').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Start Typewriter
+        document.addEventListener('DOMContentLoaded', typeWriter);
+    </script>
+</body>
+</html>
