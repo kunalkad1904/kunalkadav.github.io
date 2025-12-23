@@ -54,6 +54,17 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+        .photo-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        .photo-card:hover {
+            transform: scale(1.02);
+            border-color: #00D1FF;
+        }
         .cert-card {
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
             backdrop-filter: blur(10px);
@@ -87,18 +98,22 @@
 <body class="antialiased overflow-x-hidden">
 
     <nav class="fixed w-full z-50 glass-card border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
                     <span class="text-2xl font-bold tracking-tighter text-white">KK<span class="text-tech">.</span></span>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
+                    <div class="ml-10 flex items-center space-x-6">
                         <a href="#about" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#skills" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#experience" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-                        <a href="#certs" class="hover:text-aws transition-colors px-3 py-2 rounded-md text-sm font-medium">Certs</a>
-                        <a href="#awards" class="hover:text-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">Awards</a>
+                        <a href="#projects" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#hobbies" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Hobbies</a>
+                        
+                        <a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="fas fa-download"></i> Resume
+                        </a>
+
                         <a href="#contact" class="bg-tech text-black hover:bg-white transition-colors px-4 py-2 rounded-full text-sm font-bold">Contact Me</a>
                     </div>
                 </div>
@@ -117,15 +132,10 @@
                 I am a <span id="typewriter" class="text-white font-semibold border-r-4 border-tech pr-1"></span>
             </div>
             
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <a href="resume.pdf" download class="bg-white text-black hover:bg-gray-200 transition-all px-8 py-3 rounded-full font-bold flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                    <i class="fas fa-file-download"></i> Download CV
-                </a>
-                
+            <div class="mt-10 flex justify-center gap-4">
                 <a href="#projects" class="border border-tech text-tech hover:bg-tech hover:text-black transition-all px-8 py-3 rounded-full font-bold">View Work</a>
-                
                 <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="glass-card hover:bg-gray-800 text-white transition-all px-8 py-3 rounded-full font-bold flex items-center gap-2">
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
             </div>
             
@@ -249,7 +259,6 @@
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-aws">04.</span> Certifications</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
                 <a href="https://www.credly.com/badges/e6413908-d25b-493b-9151-98987b39e550/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
                     <div class="flex items-center gap-4 mb-4">
                         <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
@@ -259,12 +268,7 @@
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm mb-4">Validated expertise in designing distributed systems on AWS.</p>
-                    <div class="flex items-center text-xs text-gray-500 group-hover:text-white transition-colors">
-                        <span>Verify Credential</span>
-                        <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
                 </a>
-
                 <a href="https://www.credly.com/badges/dc0fc0a6-a42e-4cb4-aa4b-d675bc5a89b9/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
                     <div class="flex items-center gap-4 mb-4">
                         <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
@@ -274,12 +278,7 @@
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm mb-4">Proficiency in developing and maintaining AWS-based applications.</p>
-                    <div class="flex items-center text-xs text-gray-500 group-hover:text-white transition-colors">
-                        <span>Verify Credential</span>
-                        <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
                 </a>
-
                 <a href="https://www.credly.com/badges/d71cbe60-51d3-4e68-9955-3fafe4f9b16a/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-purple-500">
                     <div class="flex items-center gap-4 mb-4">
                         <i class="fas fa-brain text-4xl text-gray-400 group-hover:text-purple-500 transition-colors"></i>
@@ -289,12 +288,7 @@
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm mb-4">Understanding of AI/ML concepts and Generative AI on AWS.</p>
-                    <div class="flex items-center text-xs text-gray-500 group-hover:text-white transition-colors">
-                        <span>Verify Credential</span>
-                        <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
                 </a>
-
                 <a href="https://www.credly.com/badges/85faf502-0bdb-47d7-bf6f-bf940bce0cf4/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
                     <div class="flex items-center gap-4 mb-4">
                         <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
@@ -304,12 +298,7 @@
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm mb-4">Overall understanding of the AWS Cloud platform.</p>
-                    <div class="flex items-center text-xs text-gray-500 group-hover:text-white transition-colors">
-                        <span>Verify Credential</span>
-                        <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
                 </a>
-
                 <a href="https://www.credly.com/badges/3fb404cf-a1da-42dc-9ec6-7b09e8400dd3/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-google">
                     <div class="flex items-center gap-4 mb-4">
                         <i class="fab fa-google text-4xl text-gray-400 group-hover:text-google transition-colors"></i>
@@ -319,12 +308,7 @@
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm mb-4">Leadership-level understanding of Generative AI concepts.</p>
-                    <div class="flex items-center text-xs text-gray-500 group-hover:text-white transition-colors">
-                        <span>Verify Credential</span>
-                        <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
                 </a>
-
                 <a href="https://www.credly.com/badges/6020ca1c-2485-4fc2-9004-b74f3aa79a71/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-ibm">
                     <div class="flex items-center gap-4 mb-4">
                         <i class="fas fa-cloud text-4xl text-gray-400 group-hover:text-ibm transition-colors"></i>
@@ -334,20 +318,120 @@
                         </div>
                     </div>
                     <p class="text-gray-400 text-sm mb-4">Core concepts of Cloud Computing and IBM Cloud services.</p>
-                    <div class="flex items-center text-xs text-gray-500 group-hover:text-white transition-colors">
-                        <span>Verify Credential</span>
-                        <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
                 </a>
+            </div>
+        </div>
+    </section>
 
+    <section id="projects" class="py-20 bg-black/30">
+        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">05.</span> Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-brain text-4xl text-purple-400"></i>
+                            <div class="flex gap-2">
+                                <a href="https://github.com/kunalkad1904/aws-genai-validation" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">GenAI Validation Automation</h3>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Winner of TCS AI Challenge. An automated validation workflow using AWS Bedrock (Claude), Lambda, and Python that reduced manual review time by 25%.
+                        </p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-sync text-4xl text-blue-400"></i>
+                            <div class="flex gap-2">
+                                <a href="https://github.com/kunalkad1904/springboot-cicd-pipeline" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">CI/CD Pipeline Automation</h3>
+                        <p class="text-gray-400 text-sm mb-6">
+                            A complete Jenkins and AWS CodePipeline setup for Spring Boot applications. Reduced deployment time from 2 hours to 15 minutes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies" class="py-20">
+        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-pink-500">06.</span> Life & Hobbies</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-2 space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-camera text-tech mr-2"></i> Photography</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-96">
+                        <div class="photo-card rounded-2xl md:col-span-1 md:row-span-2 relative group h-full">
+                            <img src="photo1.jpg" alt="Photography 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors"></div>
+                        </div>
+                        <div class="photo-card rounded-2xl relative group h-44">
+                            <img src="photo2.jpg" alt="Photography 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="photo-card rounded-2xl relative group h-44">
+                            <img src="photo3.jpg" alt="Photography 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4">Beyond the Code</h3>
+                    
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-pink-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500">
+                            <i class="fas fa-bicycle text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Cycling</h4>
+                            <p class="text-xs text-gray-400">Weekend explorer & fitness enthusiast.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-blue-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
+                            <i class="fas fa-book-open text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Reading</h4>
+                            <p class="text-xs text-gray-400">Tech blogs, sci-fi, and self-improvement.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-orange-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                            <i class="fas fa-basketball-ball text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Basketball</h4>
+                            <p class="text-xs text-gray-400">Team player on and off the court.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-purple-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500">
+                            <i class="fas fa-video text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Content Creation</h4>
+                            <p class="text-xs text-gray-400">Sharing knowledge & visual storytelling.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
 
     <section id="awards" class="py-20 bg-black/30">
         <div class="max-w-5xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-10 text-white"><span class="text-gold">05.</span> Honors & Awards</h2>
-            
+            <h2 class="text-3xl font-bold mb-10 text-white"><span class="text-gold">07.</span> Honors & Awards</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-card p-6 rounded-xl border border-gold/20 hover:border-gold transition-all">
                     <i class="fas fa-crown text-3xl text-gold mb-3"></i>
@@ -364,83 +448,28 @@
                     <h3 class="text-lg font-bold text-white">TCS AI Spark</h3>
                     <p class="text-gray-400 text-sm mt-2">Recognition for rapid prototyping and GenAI integration.</p>
                 </div>
-                <div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold transition-all">
-                    <i class="fas fa-rocket text-3xl text-green-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white">TCS Innovation Award</h3>
-                    <p class="text-gray-400 text-sm mt-2">For excellence in automating backend workflows.</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold transition-all">
-                    <i class="fas fa-users text-3xl text-purple-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white">TCS Team Excellence</h3>
-                    <p class="text-gray-400 text-sm mt-2">Awarded for collaborative delivery of infrastructure projects.</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold transition-all">
-                    <i class="fas fa-star text-3xl text-orange-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white">TCS Beyond Performance</h3>
-                    <p class="text-gray-400 text-sm mt-2">For consistently exceeding operational KPIs.</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20">
-        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">06.</span> Featured Projects</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-brain text-4xl text-purple-400"></i>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/kunalkad1904/aws-genai-validation" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">GenAI Validation Automation</h3>
-                        <p class="text-gray-400 text-sm mb-6">
-                            Winner of TCS AI Challenge. An automated validation workflow using AWS Bedrock (Claude), Lambda, and Python that reduced manual review time by 25%.
-                        </p>
-                        <div class="flex flex-wrap gap-2 text-xs font-mono text-tech">
-                            <span class="bg-gray-900 px-2 py-1 rounded">AWS Bedrock</span>
-                            <span class="bg-gray-900 px-2 py-1 rounded">Python Lambda</span>
-                            <span class="bg-gray-900 px-2 py-1 rounded">S3</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-sync text-4xl text-blue-400"></i>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/kunalkad1904/springboot-cicd-pipeline" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">CI/CD Pipeline Automation</h3>
-                        <p class="text-gray-400 text-sm mb-6">
-                            A complete Jenkins and AWS CodePipeline setup for Spring Boot applications. Reduced deployment time from 2 hours to 15 minutes.
-                        </p>
-                        <div class="flex flex-wrap gap-2 text-xs font-mono text-tech">
-                            <span class="bg-gray-900 px-2 py-1 rounded">Jenkins</span>
-                            <span class="bg-gray-900 px-2 py-1 rounded">CodePipeline</span>
-                            <span class="bg-gray-900 px-2 py-1 rounded">Java</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 text-center bg-black/30">
+    <section id="contact" class="py-24 text-center">
         <div class="max-w-2xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-4xl font-bold mb-6 text-white">Let's Connect</h2>
             <p class="text-gray-400 mb-10">
                 I'm open to opportunities in Cloud Engineering and GenAI. Feel free to reach out!
             </p>
-            <a href="mailto:kunalkadav.work@gmail.com" class="bg-white text-black hover:bg-tech transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center gap-2">
-                <i class="far fa-envelope"></i> Say Hello
-            </a>
-            <div class="mt-12 flex justify-center gap-8">
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
+                <a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="bg-gray-800 border border-gray-600 hover:bg-gray-700 text-white transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-file-download"></i> Download CV
+                </a>
+                
+                <a href="mailto:kunalkadav.work@gmail.com" class="bg-white text-black hover:bg-tech transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
+                    <i class="far fa-envelope"></i> Say Hello
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-8">
                 <a href="https://github.com/kunalkadav" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
             </div>
