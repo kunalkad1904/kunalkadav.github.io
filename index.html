@@ -1,539 +1,287 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunal Kadav | Cloud Engineer & GenAI Practitioner</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        aws: '#FF9900',
-                        google: '#4285F4',
-                        ibm: '#0530ad',
-                        tech: '#00D1FF',
-                        dark: '#0f172a',
-                        gold: '#FFD700'
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #050505;
-            background-image: radial-gradient(circle at 50% 50%, #111827 0%, #000000 100%);
-            color: #e2e8f0;
-        }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .photo-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            overflow: hidden;
-        }
-        .photo-card:hover {
-            transform: scale(1.02);
-            border-color: #00D1FF;
-        }
-        .cert-card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .cert-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-        }
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 20px;
-            width: 2px;
-            background: #334155;
-        }
-        .animate-fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kunal Kadav | Cloud Engineer & GenAI Practitioner</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Space Grotesk', 'sans-serif'],
+},
+colors: {
+aws: '#FF9900',
+google: '#4285F4',
+ibm: '#0530ad',
+tech: '#00D1FF',
+dark: '#0f172a',
+gold: '#FFD700'
+},
+animation: {
+'blob': 'blob 7s infinite',
+'float': 'float 6s ease-in-out infinite',
+},
+keyframes: {
+blob: {
+'0%': { transform: 'translate(0px, 0px) scale(1)' },
+'33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+'66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+'100%': { transform: 'translate(0px, 0px) scale(1)' },
+},
+float: {
+'0%, 100%': { transform: 'translateY(0)' },
+'50%': { transform: 'translateY(-20px)' },
+}
+}
+}
+}
+}
+</script>
+
+<style>
+
+body{
+background-color:#050505;
+background-image:radial-gradient(circle at 50% 50%, #111827 0%, #000000 100%);
+color:#e2e8f0;
+}
+
+.glass-card{
+background:rgba(30,41,59,0.4);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.photo-card{
+background:rgba(30,41,59,0.4);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+transition:all .4s ease;
+overflow:hidden;
+}
+
+.photo-card:hover{
+transform:scale(1.02);
+border-color:#00D1FF;
+}
+
+.cert-card{
+background:linear-gradient(145deg, rgba(30,41,59,0.6), rgba(15,23,42,0.8));
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.05);
+transition:all .3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.cert-card:hover{
+transform:translateY(-5px) scale(1.02);
+box-shadow:0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+.timeline-line::before{
+content:'';
+position:absolute;
+top:0;
+bottom:0;
+left:20px;
+width:2px;
+background:#334155;
+}
+
+.animate-fade-in{
+opacity:0;
+transform:translateY(20px);
+transition:opacity .6s ease-out, transform .6s ease-out;
+}
+
+.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+
 </head>
+
 <body class="antialiased overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 glass-card border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold tracking-tighter text-white">KK<span class="text-tech">.</span></span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-6">
-                        <a href="#about" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#skills" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#projects" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#hobbies" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Hobbies</a>
-                        
-                        <a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
-                            <i class="fas fa-download"></i> Resume
-                        </a>
+<nav class="fixed w-full z-50 glass-card border-b border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                        <a href="#contact" class="bg-tech text-black hover:bg-white transition-colors px-4 py-2 rounded-full text-sm font-bold">Contact Me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+<div class="flex items-center justify-between h-16">
 
-    <section class="h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-        <div class="absolute top-20 right-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+<span class="text-2xl font-bold text-white">KK<span class="text-tech">.</span></span>
 
-        <div class="text-center z-10 px-4">
-            <p class="text-tech font-medium mb-4 tracking-widest uppercase">Hello, I am</p>
-            <h1 class="text-6xl md:text-8xl font-bold mb-6 text-white tracking-tight">Kunal Kadav</h1>
-            <div class="text-2xl md:text-4xl text-gray-400 font-light h-12">
-                I am a <span id="typewriter" class="text-white font-semibold border-r-4 border-tech pr-1"></span>
-            </div>
-            
-            <div class="mt-10 flex justify-center gap-4">
-                <a href="#projects" class="border border-tech text-tech hover:bg-tech hover:text-black transition-all px-8 py-3 rounded-full font-bold">View Work</a>
-                <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="glass-card hover:bg-gray-800 text-white transition-all px-8 py-3 rounded-full font-bold flex items-center gap-2">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-            
-            <div class="mt-12 flex justify-center gap-6 text-gray-500">
-                <div class="flex flex-col items-center animate-float">
-                    <i class="fab fa-aws text-3xl mb-2 text-aws"></i>
-                    <span class="text-xs">Certified x4</span>
-                </div>
-                <div class="flex flex-col items-center animate-float" style="animation-delay: 1s;">
-                    <i class="fas fa-brain text-3xl mb-2 text-purple-400"></i>
-                    <span class="text-xs">GenAI Pro</span>
-                </div>
-                <div class="flex flex-col items-center animate-float" style="animation-delay: 2s;">
-                    <i class="fas fa-trophy text-3xl mb-2 text-gold"></i>
-                    <span class="text-xs">Award Winner</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="hidden md:flex items-center space-x-6">
 
-    <section id="about" class="py-20 bg-black/30">
-        <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-8 text-white"><span class="text-tech">01.</span> About Me</h2>
-            <div class="glass-card p-8 rounded-2xl">
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    I am an <strong class="text-white">AWS Certified Cloud Engineer</strong> with <strong class="text-white">1.6 years of experience</strong> supporting enterprise infrastructure at Tata Consultancy Services. I specialize in managing AWS ecosystems (EC2, S3, RDS), automating operational workflows with Python, and building robust CI/CD pipelines.
-                </p>
-                <br>
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    My focus has recently shifted to <strong class="text-tech">Generative AI</strong>. I developed a solution using AWS Bedrock that reduced manual work by 25%, winning the <strong class="text-gold">TCS AI Challenge</strong>. I am passionate about minimizing "toil" through intelligent automation.
-                </p>
-            </div>
-        </div>
-    </section>
+<a href="#about" class="hover:text-tech">About</a>
 
-    <section id="skills" class="py-20">
-        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">02.</span> Technical Arsenal</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
-                    <i class="fab fa-aws text-4xl text-aws mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">AWS Cloud</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">EC2 & S3</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Lambda</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">VPC & IAM</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Route 53</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">CloudFormation</span>
-                    </div>
-                </div>
+<a href="#skills" class="hover:text-tech">Skills</a>
 
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
-                    <i class="fas fa-infinity text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">DevOps</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Jenkins</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">CodePipeline</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Docker</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Git</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">IaC</span>
-                    </div>
-                </div>
+<a href="#projects" class="hover:text-tech">Projects</a>
 
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
-                    <i class="fas fa-robot text-4xl text-purple-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Generative AI</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">AWS Bedrock</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Claude Models</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Prompt Eng.</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">AI Automation</span>
-                    </div>
-                </div>
+<a href="#hobbies" class="hover:text-tech">Hobbies</a>
 
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
-                    <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Coding</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Python</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Java</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Shell Script</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">SQL</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Linux RHEL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="border border-gray-600 px-4 py-2 rounded-full text-sm flex items-center gap-2">
+<i class="fas fa-download"></i> Resume
+</a>
 
-    <section id="experience" class="py-20 bg-black/30">
-        <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">03.</span> Experience</h2>
-            
-            <div class="relative timeline-line pl-12 space-y-12">
-                <div class="relative">
-                    <div class="absolute -left-12 mt-1.5 w-4 h-4 rounded-full bg-tech shadow-[0_0_10px_#00D1FF]"></div>
-                    <div class="glass-card p-6 rounded-xl border-l-4 border-tech">
-                        <div class="flex flex-col md:flex-row justify-between mb-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Assistant System Engineer</h3>
-                                <p class="text-tech">Tata Consultancy Services (TCS)</p>
-                            </div>
-                            <span class="text-gray-400 text-sm bg-gray-900 px-3 py-1 rounded-full h-fit mt-2 md:mt-0">May 2024 - Present</span>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
-                            <li>Support AWS infrastructure (<span class="text-white">30+ EC2</span>, <span class="text-white">15+ RDS</span>) ensuring high availability.</li>
-                            <li>Automated 10+ recurring tasks using Python/Shell, saving <span class="text-white">5-8 hours weekly</span>.</li>
-                            <li>Developed GenAI proof-of-concept using AWS Bedrock, reducing manual review time by 25%.</li>
-                            <li>Configure Security Groups, IAM roles, and maintain Linux (RHEL/Ubuntu) servers.</li>
-                            <li>Troubleshoot 40+ monthly production issues with an average resolution time of 2 hours.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<a href="#contact" class="bg-tech text-black px-4 py-2 rounded-full text-sm font-bold">
+Contact Me
+</a>
 
-    <section id="certs" class="py-20">
-        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-aws">04.</span> Certifications</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="https://www.credly.com/badges/e6413908-d25b-493b-9151-98987b39e550/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Solutions Architect</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Associate</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Validated expertise in designing distributed systems on AWS.</p>
-                </a>
-                <a href="https://www.credly.com/badges/dc0fc0a6-a42e-4cb4-aa4b-d675bc5a89b9/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Certified Developer</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Associate</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Proficiency in developing and maintaining AWS-based applications.</p>
-                </a>
-                <a href="https://www.credly.com/badges/d71cbe60-51d3-4e68-9955-3fafe4f9b16a/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-purple-500">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fas fa-brain text-4xl text-gray-400 group-hover:text-purple-500 transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-purple-500 transition-colors">AI Practitioner</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundational</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Understanding of AI/ML concepts and Generative AI on AWS.</p>
-                </a>
-                <a href="https://www.credly.com/badges/85faf502-0bdb-47d7-bf6f-bf940bce0cf4/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Cloud Practitioner</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundational</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Overall understanding of the AWS Cloud platform.</p>
-                </a>
-                <a href="https://www.credly.com/badges/3fb404cf-a1da-42dc-9ec6-7b09e8400dd3/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-google">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-google text-4xl text-gray-400 group-hover:text-google transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-google transition-colors">GenAI Leader</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Google Cloud</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Leadership-level understanding of Generative AI concepts.</p>
-                </a>
-                <a href="https://www.credly.com/badges/6020ca1c-2485-4fc2-9004-b74f3aa79a71/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-ibm">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fas fa-cloud text-4xl text-gray-400 group-hover:text-ibm transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-ibm transition-colors">Cloud Essentials</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">IBM</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Core concepts of Cloud Computing and IBM Cloud services.</p>
-                </a>
-            </div>
-        </div>
-    </section>
+</div>
+</div>
+</div>
+</nav>
 
-    <section id="projects" class="py-20 bg-black/30">
-        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">05.</span> Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-brain text-4xl text-purple-400"></i>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/kunalkad1904/aws-genai-validation" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">GenAI Validation Automation</h3>
-                        <p class="text-gray-400 text-sm mb-6">
-                            Winner of TCS AI Challenge. An automated validation workflow using AWS Bedrock (Claude), Lambda, and Python that reduced manual review time by 25%.
-                        </p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-sync text-4xl text-blue-400"></i>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/kunalkad1904/springboot-cicd-pipeline" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">CI/CD Pipeline Automation</h3>
-                        <p class="text-gray-400 text-sm mb-6">
-                            A complete Jenkins and AWS CodePipeline setup for Spring Boot applications. Reduced deployment time from 2 hours to 15 minutes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="hobbies" class="py-20">
-        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-pink-500">06.</span> Life & Hobbies</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                
-                <div class="lg:col-span-2 space-y-4">
-                    <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-camera text-tech mr-2"></i> Photography</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto md:h-96">
-                        <div class="photo-card rounded-2xl md:col-span-1 md:row-span-2 relative group h-64 md:h-full">
-                            <img src="photo1.jpg" alt="Photography 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors"></div>
-                        </div>
-                        
-                        <div class="photo-card rounded-2xl relative group h-44">
-                            <img src="photo2.jpg" alt="Photography 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="photo-card rounded-2xl relative group h-44">
-                            <img src="photo3.jpg" alt="Photography 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                    </div>
-                </div>
+<section class="h-screen flex items-center justify-center text-center relative overflow-hidden">
 
-                <div class="space-y-4">
-                    <h3 class="text-xl font-bold text-white mb-4">Beyond the Code</h3>
-                    
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-pink-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500">
-                            <i class="fas fa-bicycle text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Cycling</h4>
-                            <p class="text-xs text-gray-400">Weekend explorer & fitness enthusiast.</p>
-                        </div>
-                    </div>
+<div class="text-center z-10 px-4">
 
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-blue-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
-                            <i class="fas fa-book-open text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Reading</h4>
-                            <p class="text-xs text-gray-400">Tech blogs, sci-fi, and self-improvement.</p>
-                        </div>
-                    </div>
+<p class="text-tech mb-4 tracking-widest uppercase">
+Hello, I am
+</p>
 
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-orange-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
-                            <i class="fas fa-basketball-ball text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Basketball</h4>
-                            <p class="text-xs text-gray-400">Team player on and off the court.</p>
-                        </div>
-                    </div>
+<h1 class="text-6xl md:text-8xl font-bold mb-6 text-white">
+Kunal Kadav
+</h1>
 
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-purple-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500">
-                            <i class="fas fa-video text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Content Creation</h4>
-                            <p class="text-xs text-gray-400">Sharing knowledge & visual storytelling.</p>
-                        </div>
-                    </div>
+<div class="text-2xl md:text-4xl text-gray-400 font-light h-12">
+I am a <span id="typewriter" class="text-white font-semibold border-r-4 border-tech pr-1"></span>
+</div>
 
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</section>
 
-    <section id="awards" class="py-20 bg-black/30">
-        <div class="max-w-5xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-10 text-white"><span class="text-gold">07.</span> Honors & Awards</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-xl border border-gold/20 hover:border-gold transition-all">
-                    <i class="fas fa-crown text-3xl text-gold mb-3"></i>
-                    <h3 class="text-lg font-bold text-white">TCS AI Challenge Winner</h3>
-                    <p class="text-gray-400 text-sm mt-2">Recognized for practical GenAI automation saving 8-10 hours/week.</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold transition-all">
-                    <i class="fas fa-lightbulb text-3xl text-yellow-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white">TCS AI Idea Ignite</h3>
-                    <p class="text-gray-400 text-sm mt-2">Awarded for innovative AI implementation concepts.</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold transition-all">
-                    <i class="fas fa-bolt text-3xl text-blue-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white">TCS AI Spark</h3>
-                    <p class="text-gray-400 text-sm mt-2">Recognition for rapid prototyping and GenAI integration.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact" class="py-24 text-center">
-        <div class="max-w-2xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-4xl font-bold mb-6 text-white">Let's Connect</h2>
-            <p class="text-gray-400 mb-10">
-                I'm open to opportunities in Cloud Engineering and GenAI. Feel free to reach out!
-            </p>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
-                <a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="bg-gray-800 border border-gray-600 hover:bg-gray-700 text-white transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
-                    <i class="fas fa-file-download"></i> Download CV
-                </a>
-                
-                <a href="mailto:kunalkadav.work@gmail.com" class="bg-white text-black hover:bg-tech transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
-                    <i class="far fa-envelope"></i> Say Hello
-                </a>
-            </div>
+<section id="about" class="py-20 bg-black/30">
 
-            <div class="flex justify-center gap-8">
-                <a href="https://github.com/kunalkadav" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <footer class="mt-20 text-gray-600 text-sm">
-                <p>&copy; 2025 Kunal Kadav. Built with Cloud & Coffee.</p>
-            </footer>
-        </div>
-    </section>
+<div class="max-w-4xl mx-auto px-6">
 
-    <script>
-        // Typewriter Effect
-        const words = ["Cloud Engineer.", "AWS Certified.", "GenAI Practitioner.", "TCS Award Winner."];
-        let i = 0;
-        let timer;
+<h2 class="text-3xl font-bold mb-8 text-white">
+<span class="text-tech">01.</span> About Me
+</h2>
 
-        function typeWriter() {
-            const heading = document.getElementById("typewriter");
-            const word = words[i];
-            const current = heading.textContent;
+<div class="glass-card p-8 rounded-2xl">
 
-            if (!heading.classList.contains("deleting")) {
-                if (current.length < word.length) {
-                    heading.textContent = word.substring(0, current.length + 1);
-                    timer = setTimeout(typeWriter, 100);
-                } else {
-                    heading.classList.add("deleting");
-                    timer = setTimeout(typeWriter, 2000);
-                }
-            } else {
-                if (current.length > 0) {
-                    heading.textContent = word.substring(0, current.length - 1);
-                    timer = setTimeout(typeWriter, 50);
-                } else {
-                    heading.classList.remove("deleting");
-                    i = (i + 1) % words.length;
-                    timer = setTimeout(typeWriter, 500);
-                }
-            }
-        }
+<p class="text-lg text-gray-300">
+AWS Certified Cloud Engineer with experience supporting enterprise infrastructure at TCS.
+</p>
 
-        // Scroll Animation
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+<br>
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+<p class="text-lg text-gray-300">
+Focused on automation, DevOps and Generative AI using AWS technologies.
+</p>
 
-        document.querySelectorAll('.scroll-element').forEach((el) => {
-            observer.observe(el);
-        });
+</div>
+</div>
+</section>
 
-        // Start Typewriter
-        document.addEventListener('DOMContentLoaded', typeWriter);
-    </script>
+
+
+<section id="awards" class="py-20 bg-black/30">
+
+<div class="max-w-5xl mx-auto px-6">
+
+<h2 class="text-3xl font-bold mb-10 text-white">
+<span class="text-gold">07.</span> Honors & Awards
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+<div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold">
+<i class="fas fa-lightbulb text-3xl text-yellow-400 mb-3"></i>
+<h3 class="text-lg font-bold text-white">TCS Innovation</h3>
+<p class="text-gray-400 text-sm mt-2">
+Recognized for innovative ideas and technology-driven improvements in project delivery.
+</p>
+</div>
+
+<div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold">
+<i class="fas fa-trophy text-3xl text-gold mb-3"></i>
+<h3 class="text-lg font-bold text-white">TCS Performance Excellence</h3>
+<p class="text-gray-400 text-sm mt-2">
+Awarded for outstanding performance and consistent high-quality work.
+</p>
+</div>
+
+<div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold">
+<i class="fas fa-users text-3xl text-blue-400 mb-3"></i>
+<h3 class="text-lg font-bold text-white">TCS Team Award</h3>
+<p class="text-gray-400 text-sm mt-2">
+Recognized for strong collaboration and teamwork contributing to project success.
+</p>
+</div>
+
+<div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold">
+<i class="fas fa-graduation-cap text-3xl text-green-400 mb-3"></i>
+<h3 class="text-lg font-bold text-white">Excellent Learner</h3>
+<p class="text-gray-400 text-sm mt-2">
+Recognized for continuous learning and certifications.
+</p>
+</div>
+
+</div>
+</div>
+
+</section>
+
+
+
+<section id="contact" class="py-24 text-center">
+
+<div class="max-w-2xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold mb-6 text-white">
+Let's Connect
+</h2>
+
+<p class="text-gray-400 mb-10">
+Open to Cloud Engineering & GenAI opportunities.
+</p>
+
+<div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
+
+<a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="bg-gray-800 border border-gray-600 px-10 py-4 rounded-full font-bold">
+Download CV
+</a>
+
+<a href="mailto:kunalkadav.work@gmail.com" class="bg-white text-black px-10 py-4 rounded-full font-bold">
+Say Hello
+</a>
+
+</div>
+
+<div class="flex justify-center gap-8">
+
+<a href="https://github.com/kunalkadav" target="_blank" class="text-2xl text-gray-400 hover:text-white">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="text-2xl text-gray-400 hover:text-white">
+<i class="fab fa-linkedin"></i>
+</a>
+
+</div>
+
+<footer class="mt-20 text-gray-600 text-sm">
+© 2025 Kunal Kadav. Built with Cloud & Coffee.
+</footer>
+
+</div>
+</section>
+
 </body>
 </html>
