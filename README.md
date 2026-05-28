@@ -5,7 +5,7 @@ A high-performance, responsive personal portfolio website designed to showcase m
 Designed with a modern "Glassmorphism" aesthetic and a focus on speed and accessibility.
 
 ## 🔗 Live Demo
-[Insert your GitHub Pages Link Here - e.g., https://kunalkadav.github.io]
+[Insert your GitHub Pages Link Here - e.g., (https://kunalkadav-github-io.vercel.app/)]
 
 ## 🛠️ Tech Stack
 * **Core:** HTML5, CSS3, Vanilla JavaScript
@@ -33,4 +33,4 @@ Designed with a modern "Glassmorphism" aesthetic and a focus on speed and access
 
 ## 📫 Contact
 * **LinkedIn:** [Kunal Kadav](https://www.linkedin.com/in/kunal-kadav-7b85111a0)
-* **Email:** kunalkadav1904@gmail.com
+* **Email:** kunalkadav.work@gmail.com
