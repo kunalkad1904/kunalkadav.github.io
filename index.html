@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -49,7 +52,7 @@
             background-image: radial-gradient(circle at 50% 50%, #111827 0%, #000000 100%);
             color: #e2e8f0;
         }
-
+ 
         /* Animated grid */
         body::before {
             content: '';
@@ -67,7 +70,7 @@
             0% { background-position: 0 0; }
             100% { background-position: 60px 60px; }
         }
-
+ 
         /* Floating particles canvas */
         #particles-canvas {
             position: fixed;
@@ -75,7 +78,7 @@
             pointer-events: none;
             z-index: 1;
         }
-
+ 
         /* Glowing orbs */
         .orb {
             position: fixed;
@@ -90,7 +93,7 @@
         .orb-2 { width: 400px; height: 400px; background: #7C3AED; top: 40%; right: -100px; animation-delay: -5s; }
         .orb-3 { width: 350px; height: 350px; background: #FF9900; bottom: -100px; left: 30%; animation-delay: -10s; }
         .orb-4 { width: 300px; height: 300px; background: #EC4899; top: 60%; left: 10%; animation-delay: -7s; }
-
+ 
         @keyframes orbFloat {
             0%, 100% { transform: translate(0, 0) scale(1); }
             25% { transform: translate(40px, -60px) scale(1.1); }
@@ -144,14 +147,14 @@
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
-
+ 
     <!-- Background Effects -->
     <canvas id="particles-canvas"></canvas>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
     <div class="orb orb-4"></div>
-
+ 
     <nav class="fixed w-full z-50 glass-card border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -168,18 +171,18 @@
                         <a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
                             <i class="fas fa-download"></i> Resume
                         </a>
-
+ 
                         <a href="#contact" class="bg-tech text-black hover:bg-white transition-colors px-4 py-2 rounded-full text-sm font-bold">Contact Me</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-
+ 
     <section class="h-screen flex items-center justify-center relative overflow-hidden">
         <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
         <div class="absolute top-20 right-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-
+ 
         <div class="text-center z-10 px-4">
             <p class="text-tech font-medium mb-4 tracking-widest uppercase">Hello, I am</p>
             <h1 class="text-6xl md:text-8xl font-bold mb-6 text-white tracking-tight">Kunal Kadav</h1>
@@ -210,7 +213,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="about" class="py-20 bg-black/30">
         <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-8 text-white"><span class="text-tech">01.</span> About Me</h2>
@@ -225,7 +228,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="skills" class="py-20">
         <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">02.</span> Technical Arsenal</h2>
@@ -242,7 +245,7 @@
                         <span class="bg-gray-800 text-xs px-2 py-1 rounded">CloudFormation</span>
                     </div>
                 </div>
-
+ 
                 <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
                     <i class="fas fa-infinity text-4xl text-blue-500 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">DevOps</h3>
@@ -254,7 +257,7 @@
                         <span class="bg-gray-800 text-xs px-2 py-1 rounded">IaC</span>
                     </div>
                 </div>
-
+ 
                 <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
                     <i class="fas fa-robot text-4xl text-purple-500 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">Generative AI</h3>
@@ -265,7 +268,7 @@
                         <span class="bg-gray-800 text-xs px-2 py-1 rounded">AI Automation</span>
                     </div>
                 </div>
-
+ 
                 <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
                     <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">Coding</h3>
@@ -280,7 +283,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="experience" class="py-20 bg-black/30">
         <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">03.</span> Experience</h2>
@@ -312,7 +315,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="certs" class="py-20">
         <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-aws">04.</span> Certifications</h2>
@@ -388,10 +391,20 @@
                     </div>
                     <p class="text-gray-400 text-sm mb-4">Foundational proficiency in working with Claude models and the Anthropic ecosystem.</p>
                 </a>
+                <a href="https://www.credly.com/badges/ca565db2-3e46-4e9b-a37e-062504ed5df2/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-orange-400">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-code text-4xl text-gray-400 group-hover:text-orange-400 transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-orange-400 transition-colors">Claude Certified Developer</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundations · Anthropic</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Foundational developer skills for building applications with the Claude API.</p>
+                </a>
             </div>
         </div>
     </section>
-
+ 
     <section id="projects" class="py-20 bg-black/30">
         <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">05.</span> Featured Projects</h2>
@@ -427,7 +440,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="hobbies" class="py-20">
         <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-pink-500">06.</span> Life & Hobbies</h2>
@@ -451,7 +464,7 @@
                         </div>
                     </div>
                 </div>
-
+ 
                 <div class="space-y-4">
                     <h3 class="text-xl font-bold text-white mb-4">Beyond the Code</h3>
                     
@@ -464,7 +477,7 @@
                             <p class="text-xs text-gray-400">Weekend explorer & fitness enthusiast.</p>
                         </div>
                     </div>
-
+ 
                     <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-blue-500 transition-colors">
                         <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
                             <i class="fas fa-book-open text-xl"></i>
@@ -474,7 +487,7 @@
                             <p class="text-xs text-gray-400">Tech blogs, sci-fi, and self-improvement.</p>
                         </div>
                     </div>
-
+ 
                     <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-orange-500 transition-colors">
                         <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
                             <i class="fas fa-basketball-ball text-xl"></i>
@@ -484,7 +497,7 @@
                             <p class="text-xs text-gray-400">Team player on and off the court.</p>
                         </div>
                     </div>
-
+ 
                     <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-purple-500 transition-colors">
                         <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500">
                             <i class="fas fa-video text-xl"></i>
@@ -494,12 +507,12 @@
                             <p class="text-xs text-gray-400">Sharing knowledge & visual storytelling.</p>
                         </div>
                     </div>
-
+ 
                 </div>
             </div>
         </div>
     </section>
-
+ 
     <section id="awards" class="py-20 bg-black/30">
         <div class="max-w-5xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-10 text-white"><span class="text-gold">07.</span> Honors & Awards</h2>
@@ -527,7 +540,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="contact" class="py-24 text-center">
         <div class="max-w-2xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-4xl font-bold mb-6 text-white">Let's Connect</h2>
@@ -544,7 +557,7 @@
                     <i class="far fa-envelope"></i> Say Hello
                 </a>
             </div>
-
+ 
             <div class="flex justify-center gap-8">
                 <a href="https://github.com/kunalkadav" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -554,18 +567,18 @@
             </footer>
         </div>
     </section>
-
+ 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Typewriter Effect
         const words = ["Cloud Engineer.", "AWS Certified.", "GenAI Practitioner."];
         let i = 0;
         let timer;
-
+ 
         function typeWriter() {
             const heading = document.getElementById("typewriter");
             const word = words[i];
             const current = heading.textContent;
-
+ 
             if (!heading.classList.contains("deleting")) {
                 if (current.length < word.length) {
                     heading.textContent = word.substring(0, current.length + 1);
@@ -585,14 +598,14 @@
                 }
             }
         }
-
+ 
         // Scroll Animation
         const observerOptions = {
             root: null,
             rootMargin: '0px',
             threshold: 0.1
         };
-
+ 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -601,26 +614,26 @@
                 }
             });
         }, observerOptions);
-
+ 
         document.querySelectorAll('.scroll-element').forEach((el) => {
             observer.observe(el);
         });
-
+ 
         // Start Typewriter
         document.addEventListener('DOMContentLoaded', typeWriter);
-
+ 
         // Particles
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-
+ 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
-
+ 
         class Particle {
             constructor() { this.reset(); }
             reset() {
@@ -650,9 +663,9 @@
                 ctx.globalAlpha = 1;
             }
         }
-
+ 
         for (let i = 0; i < 120; i++) particles.push(new Particle());
-
+ 
         function drawConnections() {
             for (let a = 0; a < particles.length; a++) {
                 for (let b = a + 1; b < particles.length; b++) {
@@ -672,7 +685,7 @@
                 }
             }
         }
-
+ 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach(p => { p.update(); p.draw(); });
@@ -683,3 +696,4 @@
     </script>
 </body>
 </html>
+ 
