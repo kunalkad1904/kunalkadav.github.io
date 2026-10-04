@@ -1,30 +1,21 @@
-
-
-Index · HTML
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunal Kadav | Cloud Engineer &amp; GenAI Practitioner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Kunal Kadav | AI & Cloud Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
                     colors: {
-                        aws: '#FF9900',
-                        google: '#4285F4',
-                        ibm: '#0530ad',
-                        tech: '#00D1FF',
-                        dark: '#0f172a',
-                        gold: '#FFD700'
+                        aws: '#FF9900', google: '#4285F4', ibm: '#0530ad',
+                        tech: '#00D1FF', dark: '#0f172a', gold: '#FFD700',
+                        azure: '#0078D4', anthropic: '#CC785C'
                     },
                     animation: {
                         'blob': 'blob 7s infinite',
@@ -32,13 +23,13 @@ Index · HTML
                     },
                     keyframes: {
                         blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '0%': { transform: 'translate(0px,0px) scale(1)' },
+                            '33%': { transform: 'translate(30px,-50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px,20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px,0px) scale(1)' },
                         },
                         float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
+                            '0%,100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-20px)' },
                         }
                     }
@@ -47,350 +38,308 @@ Index · HTML
         }
     </script>
     <style>
+        :root { box-sizing: border-box; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+        html { scroll-padding-top: env(safe-area-inset-top,0px); }
         body {
             background-color: #050505;
             background-image: radial-gradient(circle at 50% 50%, #111827 0%, #000000 100%);
             color: #e2e8f0;
         }
- 
-        /* Animated grid */
         body::before {
             content: '';
-            position: fixed;
-            inset: 0;
+            position: fixed; inset: 0;
             background-image:
-                linear-gradient(rgba(0, 209, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 209, 255, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(0,209,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,209,255,0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             animation: gridMove 20s linear infinite;
-            pointer-events: none;
-            z-index: 0;
+            pointer-events: none; z-index: 0;
         }
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 60px 60px; }
-        }
- 
-        /* Floating particles canvas */
-        #particles-canvas {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
- 
-        /* Glowing orbs */
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.12;
-            pointer-events: none;
-            z-index: 1;
-            animation: orbFloat 15s ease-in-out infinite;
-        }
-        .orb-1 { width: 500px; height: 500px; background: #00D1FF; top: -100px; left: -100px; animation-delay: 0s; }
-        .orb-2 { width: 400px; height: 400px; background: #7C3AED; top: 40%; right: -100px; animation-delay: -5s; }
-        .orb-3 { width: 350px; height: 350px; background: #FF9900; bottom: -100px; left: 30%; animation-delay: -10s; }
-        .orb-4 { width: 300px; height: 300px; background: #EC4899; top: 60%; left: 10%; animation-delay: -7s; }
- 
+        @keyframes gridMove { 0%{background-position:0 0} 100%{background-position:60px 60px} }
+        #particles-canvas { position:fixed; inset:0; pointer-events:none; z-index:1; }
+        .orb { position:fixed; border-radius:50%; filter:blur(80px); opacity:0.12; pointer-events:none; z-index:1; animation:orbFloat 15s ease-in-out infinite; }
+        .orb-1 { width:500px;height:500px;background:#00D1FF;top:-100px;left:-100px;animation-delay:0s; }
+        .orb-2 { width:400px;height:400px;background:#7C3AED;top:40%;right:-100px;animation-delay:-5s; }
+        .orb-3 { width:350px;height:350px;background:#FF9900;bottom:-100px;left:30%;animation-delay:-10s; }
+        .orb-4 { width:300px;height:300px;background:#EC4899;top:60%;left:10%;animation-delay:-7s; }
         @keyframes orbFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(40px, -60px) scale(1.1); }
-            50% { transform: translate(-30px, 40px) scale(0.9); }
-            75% { transform: translate(60px, 20px) scale(1.05); }
+            0%,100%{transform:translate(0,0) scale(1)}
+            25%{transform:translate(40px,-60px) scale(1.1)}
+            50%{transform:translate(-30px,40px) scale(0.9)}
+            75%{transform:translate(60px,20px) scale(1.05)}
         }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .photo-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            overflow: hidden;
-        }
-        .photo-card:hover {
-            transform: scale(1.02);
-            border-color: #00D1FF;
-        }
-        .cert-card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .cert-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-        }
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 20px;
-            width: 2px;
-            background: #334155;
-        }
-        nav, section, footer { position: relative; z-index: 10; }
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .glass-card { background:rgba(30,41,59,0.4); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.05); }
+        .cert-card { background:linear-gradient(145deg,rgba(30,41,59,0.6),rgba(15,23,42,0.8)); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.05); transition:all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .cert-card:hover { transform:translateY(-5px) scale(1.02); box-shadow:0 10px 30px -10px rgba(0,0,0,0.5); }
+        .photo-card { background:rgba(30,41,59,0.4); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); transition:all 0.4s ease; overflow:hidden; }
+        .photo-card:hover { transform:scale(1.02); border-color:#00D1FF; }
+        .timeline-line::before { content:''; position:absolute; top:0; bottom:0; left:20px; width:2px; background:#334155; }
+        nav, section, footer { position:relative; z-index:10; }
+        .animate-fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease-out,transform 0.6s ease-out; }
+        .visible { opacity:1; transform:translateY(0); }
+        .skill-tag { background:rgba(30,41,59,0.6); border:1px solid rgba(255,255,255,0.08); }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
- 
-    <!-- Background Effects -->
+
     <canvas id="particles-canvas"></canvas>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
     <div class="orb orb-4"></div>
- 
+
+    <!-- NAV -->
     <nav class="fixed w-full z-50 glass-card border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold tracking-tighter text-white">KK<span class="text-tech">.</span></span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-6">
-                        <a href="#about" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#skills" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#projects" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#hobbies" class="hover:text-tech transition-colors px-3 py-2 rounded-md text-sm font-medium">Hobbies</a>
-                        
-                        <a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
-                            <i class="fas fa-download"></i> Resume
-                        </a>
- 
-                        <a href="#contact" class="bg-tech text-black hover:bg-white transition-colors px-4 py-2 rounded-full text-sm font-bold">Contact Me</a>
-                    </div>
+                <span class="text-2xl font-bold tracking-tighter text-white">KK<span class="text-tech">.</span></span>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="hover:text-tech transition-colors text-sm font-medium">About</a>
+                    <a href="#skills" class="hover:text-tech transition-colors text-sm font-medium">Skills</a>
+                    <a href="#experience" class="hover:text-tech transition-colors text-sm font-medium">Experience</a>
+                    <a href="#projects" class="hover:text-tech transition-colors text-sm font-medium">Projects</a>
+                    <a href="#certs" class="hover:text-tech transition-colors text-sm font-medium">Certifications</a>
+                    <a href="#awards" class="hover:text-tech transition-colors text-sm font-medium">Awards</a>
+                    <a href="Kunal_Kadav_Resume.pdf" download class="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
+                        <i class="fas fa-download"></i> Resume
+                    </a>
+                    <a href="#contact" class="bg-tech text-black hover:bg-white transition-colors px-4 py-2 rounded-full text-sm font-bold">Contact Me</a>
                 </div>
             </div>
         </div>
     </nav>
- 
+
+    <!-- HERO -->
     <section class="h-screen flex items-center justify-center relative overflow-hidden">
         <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-        <div class="absolute top-20 right-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
- 
+        <div class="absolute top-20 right-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob" style="animation-delay:2s"></div>
         <div class="text-center z-10 px-4">
-            <p class="text-tech font-medium mb-4 tracking-widest uppercase">Hello, I am</p>
+            <p class="text-tech font-medium mb-4 tracking-widest uppercase text-sm">Hello, I am</p>
             <h1 class="text-6xl md:text-8xl font-bold mb-6 text-white tracking-tight">Kunal Kadav</h1>
             <div class="text-2xl md:text-4xl text-gray-400 font-light h-12">
                 I am a <span id="typewriter" class="text-white font-semibold border-r-4 border-tech pr-1"></span>
             </div>
-            
-            <div class="mt-10 flex justify-center gap-4">
+            <div class="mt-10 flex justify-center gap-4 flex-wrap">
                 <a href="#projects" class="border border-tech text-tech hover:bg-tech hover:text-black transition-all px-8 py-3 rounded-full font-bold">View Work</a>
                 <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="glass-card hover:bg-gray-800 text-white transition-all px-8 py-3 rounded-full font-bold flex items-center gap-2">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
             </div>
-            
-            <div class="mt-12 flex justify-center gap-6 text-gray-500">
+            <div class="mt-12 flex justify-center gap-8 text-gray-500 flex-wrap">
                 <div class="flex flex-col items-center animate-float">
+                    <i class="fas fa-robot text-3xl mb-2 text-purple-400"></i>
+                    <span class="text-xs">Azure AI Foundry</span>
+                </div>
+                <div class="flex flex-col items-center animate-float" style="animation-delay:1s">
                     <i class="fab fa-aws text-3xl mb-2 text-aws"></i>
-                    <span class="text-xs">Certified x4</span>
+                    <span class="text-xs">AWS Certified</span>
                 </div>
-                <div class="flex flex-col items-center animate-float" style="animation-delay: 1s;">
-                    <i class="fas fa-brain text-3xl mb-2 text-purple-400"></i>
-                    <span class="text-xs">GenAI Pro</span>
-                </div>
-                <div class="flex flex-col items-center animate-float" style="animation-delay: 2s;">
+                <div class="flex flex-col items-center animate-float" style="animation-delay:2s">
                     <i class="fas fa-trophy text-3xl mb-2 text-gold"></i>
                     <span class="text-xs">Award Winner</span>
                 </div>
             </div>
         </div>
     </section>
- 
+
+    <!-- ABOUT -->
     <section id="about" class="py-20 bg-black/30">
         <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-8 text-white"><span class="text-tech">01.</span> About Me</h2>
             <div class="glass-card p-8 rounded-2xl">
                 <p class="text-lg text-gray-300 leading-relaxed">
-                    I am an <strong class="text-white">AWS Certified Cloud Engineer</strong> with <strong class="text-white">2.0 years of experience</strong> supporting enterprise infrastructure at Tata Consultancy Services. I specialize in managing AWS ecosystems (EC2, S3, RDS), automating operational workflows with Python, and building robust CI/CD pipelines.
+                    I am an <strong class="text-white">AI & Cloud Engineer at Tata Consultancy Services</strong> with <strong class="text-white">2 years 3 months of experience</strong>. I design and build multi-agent GenAI systems using <strong class="text-tech">Azure AI Foundry</strong>, implement RAG pipelines with Azure AI Search, and manage production AWS infrastructure across enterprise environments.
                 </p>
                 <br>
                 <p class="text-lg text-gray-300 leading-relaxed">
-                    My focus has recently shifted to <strong class="text-tech">Generative AI</strong>. I developed a solution using AWS Bedrock that reduced manual work by 25%, winning the <strong class="text-gold">TCS AI Challenge</strong>. I am passionate about minimizing "toil" through intelligent automation.
+                    I built an <strong class="text-white">AI Code Assist Agent</strong> using Azure AI Foundry — a Supervisor Agent orchestrating specialized agents for code explanation, generation, testing, and impact analysis. I also won the <strong class="text-gold">TCS AI Challenge</strong> for a GenAI automation on AWS Bedrock that saved 8 hours of manual work per week. Promoted to <strong class="text-white">System Engineer within one year</strong>.
                 </p>
             </div>
         </div>
     </section>
- 
+
+    <!-- SKILLS -->
     <section id="skills" class="py-20">
         <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">02.</span> Technical Arsenal</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-xl hover:border-azure transition-colors duration-300" style="border-color:transparent">
+                    <i class="fas fa-brain text-4xl text-azure mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Azure AI</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Azure AI Foundry</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Azure OpenAI</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Azure ML</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Azure AI Search</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Azure DevOps</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Cognitive Services</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover:border-purple-500 transition-colors duration-300" style="border-color:transparent">
+                    <i class="fas fa-robot text-4xl text-purple-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">GenAI & LLMs</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Multi-Agent Orchestration</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">RAG</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Prompt Engineering</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">AWS Bedrock</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Claude Models</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">LLM API Integration</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover:border-aws transition-colors duration-300" style="border-color:transparent">
                     <i class="fab fa-aws text-4xl text-aws mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">AWS Cloud</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">EC2 & S3</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Lambda</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">VPC & IAM</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Route 53</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">CloudFormation</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">EC2 & S3</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Lambda</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">RDS & VPC</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">IAM</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">CloudWatch & SNS</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">CloudFormation</span>
                     </div>
                 </div>
- 
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
+                <div class="glass-card p-6 rounded-xl hover:border-blue-500 transition-colors duration-300" style="border-color:transparent">
                     <i class="fas fa-infinity text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">DevOps</h3>
+                    <h3 class="text-xl font-bold mb-4">DevOps & CI/CD</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Jenkins</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">CodePipeline</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Docker</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Git</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">IaC</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Jenkins</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">CodePipeline</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Docker</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Git</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">IaC</span>
                     </div>
                 </div>
- 
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
-                    <i class="fas fa-robot text-4xl text-purple-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Generative AI</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">AWS Bedrock</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Claude Models</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Prompt Eng.</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">AI Automation</span>
-                    </div>
-                </div>
- 
-                <div class="glass-card p-6 rounded-xl hover:border-tech transition-colors duration-300">
+                <div class="glass-card p-6 rounded-xl hover:border-green-500 transition-colors duration-300" style="border-color:transparent">
                     <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Coding</h3>
+                    <h3 class="text-xl font-bold mb-4">Programming</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Python</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Java</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Shell Script</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">SQL</span>
-                        <span class="bg-gray-800 text-xs px-2 py-1 rounded">Linux RHEL</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Python</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">SQL</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">REST APIs</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">JSON</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Shell Script</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Java</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover:border-gray-400 transition-colors duration-300" style="border-color:transparent">
+                    <i class="fas fa-server text-4xl text-gray-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Systems</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Linux RHEL/Ubuntu</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Spring Boot</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">MySQL</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">JIRA</span>
+                        <span class="skill-tag text-xs px-2 py-1 rounded">Agile/Scrum</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
+
+    <!-- EXPERIENCE -->
     <section id="experience" class="py-20 bg-black/30">
         <div class="max-w-4xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">03.</span> Experience</h2>
-            
-            <div class="relative timeline-line pl-12 space-y-12">
+            <div class="relative timeline-line pl-12 space-y-10">
+                <!-- Role 1 -->
                 <div class="relative">
                     <div class="absolute -left-12 mt-1.5 w-4 h-4 rounded-full bg-tech shadow-[0_0_10px_#00D1FF]"></div>
                     <div class="glass-card p-6 rounded-xl border-l-4 border-tech">
                         <div class="flex flex-col md:flex-row justify-between mb-4">
                             <div>
-                                <h3 class="text-xl font-bold text-white">System Engineer</h3>
+                                <h3 class="text-xl font-bold text-white">System Engineer – AI & Cloud</h3>
                                 <p class="text-tech">Tata Consultancy Services (TCS)</p>
                             </div>
-                            <span class="text-gray-400 text-sm bg-gray-900 px-3 py-1 rounded-full h-fit mt-2 md:mt-0">May 2024 – Present · Pune, India</span>
+                            <span class="text-gray-400 text-sm bg-gray-900 px-3 py-1 rounded-full h-fit mt-2 md:mt-0">May 2025 – Present · Pune</span>
                         </div>
                         <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
-                            <li>Support and monitor AWS infrastructure including <span class="text-white">EC2, RDS, S3, VPC, and Lambda</span> across development and production environments.</li>
-                            <li>Administer Linux servers (RHEL/Ubuntu); configure security groups, IAM roles, and policies following AWS security best practices.</li>
-                            <li>Automated <span class="text-white">10+ recurring operational tasks</span> using Python and Shell scripts, significantly reducing manual effort.</li>
-                            <li>Troubleshoot and resolve production issues related to <span class="text-white">Java Spring Boot</span> services, SQL queries, and REST APIs efficiently.</li>
-                            <li>Build and maintain <span class="text-white">CI/CD pipelines</span> using Jenkins and AWS CodePipeline for automated deployments.</li>
-                            <li>Set up <span class="text-white">CloudWatch alarms</span> and SNS notifications for proactive monitoring of critical services and infrastructure.</li>
-                            <li>Developed <span class="text-white">GenAI proof-of-concept</span> using AWS Bedrock (Claude) to automate validation workflows, improving efficiency.</li>
-                            <li>Collaborate with Agile teams in sprint planning and daily standups to deliver infrastructure improvements and provide L2/L3 production support.</li>
-                            <li>Built GenAI automation solution recognized for reducing repetitive validation work.</li>
+                            <li>Designed and built a multi-agent GenAI solution using <span class="text-white">Azure AI Foundry</span> to automate code understanding, generation, testing, and impact analysis — saved <span class="text-white">5–6 hrs/week</span> of developer code review time</li>
+                            <li>Architected a <span class="text-white">Supervisor Agent</span> orchestration layer for intent detection, prompt routing, and response consolidation across specialized agents</li>
+                            <li>Implemented <span class="text-white">RAG via Azure AI Search</span> integrating enterprise sources (TRS docs, repositories, files) for real-time contextual code retrieval</li>
+                            <li>Engineered impact analysis to identify file dependencies and downstream effects using enterprise dependency data</li>
+                            <li>Manage <span class="text-white">15+ EC2 instances</span> across dev and prod for 15 developers; resolve ~40 incidents/month with avg resolution under 2 hours</li>
+                            <li>Followed <span class="text-white">Responsible AI</span> principles and optimized prompt frameworks to reduce hallucinations</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Role 2 -->
+                <div class="relative">
+                    <div class="absolute -left-12 mt-1.5 w-4 h-4 rounded-full bg-gray-600"></div>
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-gray-600">
+                        <div class="flex flex-col md:flex-row justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Assistant System Engineer</h3>
+                                <p class="text-gray-400">Tata Consultancy Services (TCS)</p>
+                            </div>
+                            <span class="text-gray-400 text-sm bg-gray-900 px-3 py-1 rounded-full h-fit mt-2 md:mt-0">May 2024 – Apr 2025 · Pune</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                            <li>Built <span class="text-white">GenAI validation tool on AWS Bedrock (Claude)</span> saving 8 hrs/week — won <span class="text-gold font-semibold">TCS AI Challenge</span></li>
+                            <li>Set up Jenkins and CodePipeline CI/CD for Spring Boot apps; cut deployment time from <span class="text-white">2 hours to 15 minutes</span></li>
+                            <li>Automated 10+ recurring tasks using Python and Shell scripts, saving ~6 hrs of manual effort/week</li>
+                            <li>Administered Linux (RHEL/Ubuntu) servers; configured IAM roles and security groups per least-privilege principles</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
-    <section id="certs" class="py-20">
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20">
         <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-aws">04.</span> Certifications</h2>
-            
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">04.</span> Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-robot text-4xl text-azure"></i>
+                            <span class="text-xs bg-gold/20 text-gold px-3 py-1 rounded-full font-medium">TCS GenAI Initiative</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">AI Code Assist Agent</h3>
+                        <p class="text-gray-400 text-xs mb-1 uppercase tracking-widest">Azure AI Foundry</p>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Multi-agent GenAI system with Supervisor Agent orchestration, specialized agents for code lifecycle automation, and RAG via Azure AI Search. Reduced developer code review time by 5–6 hrs/week.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag text-xs px-2 py-1 rounded">Azure AI Foundry</span>
+                            <span class="skill-tag text-xs px-2 py-1 rounded">RAG</span>
+                            <span class="skill-tag text-xs px-2 py-1 rounded">Multi-Agent</span>
+                            <span class="skill-tag text-xs px-2 py-1 rounded">Azure DevOps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-brain text-4xl text-purple-400"></i>
+                            <span class="text-xs bg-gold/20 text-gold px-3 py-1 rounded-full font-medium">TCS AI Challenge Winner</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">GenAI Validation Automation</h3>
+                        <p class="text-gray-400 text-xs mb-1 uppercase tracking-widest">AWS Bedrock</p>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Automated validation workflow using AWS Bedrock (Claude), Lambda, Python, and S3. Replaced a fully manual process, saving 8 hrs/week and reducing review time by 25%.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag text-xs px-2 py-1 rounded">AWS Bedrock</span>
+                            <span class="skill-tag text-xs px-2 py-1 rounded">Claude</span>
+                            <span class="skill-tag text-xs px-2 py-1 rounded">Lambda</span>
+                            <span class="skill-tag text-xs px-2 py-1 rounded">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs" class="py-20 bg-black/30">
+        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-aws">05.</span> Certifications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="https://www.credly.com/badges/e6413908-d25b-493b-9151-98987b39e550/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Solutions Architect</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Associate</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Validated expertise in designing distributed systems on AWS.</p>
-                </a>
-                <a href="https://www.credly.com/badges/dc0fc0a6-a42e-4cb4-aa4b-d675bc5a89b9/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Certified Developer</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Associate</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Proficiency in developing and maintaining AWS-based applications.</p>
-                </a>
-                <a href="https://www.credly.com/badges/d71cbe60-51d3-4e68-9955-3fafe4f9b16a/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-purple-500">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fas fa-brain text-4xl text-gray-400 group-hover:text-purple-500 transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-purple-500 transition-colors">AI Practitioner</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundational</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Understanding of AI/ML concepts and Generative AI on AWS.</p>
-                </a>
-                <a href="https://www.credly.com/badges/85faf502-0bdb-47d7-bf6f-bf940bce0cf4/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Cloud Practitioner</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundational</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Overall understanding of the AWS Cloud platform.</p>
-                </a>
-                <a href="https://www.credly.com/badges/3fb404cf-a1da-42dc-9ec6-7b09e8400dd3/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-google">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fab fa-google text-4xl text-gray-400 group-hover:text-google transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-google transition-colors">GenAI Leader</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Google Cloud</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Leadership-level understanding of Generative AI concepts.</p>
-                </a>
-                <a href="https://www.credly.com/badges/6020ca1c-2485-4fc2-9004-b74f3aa79a71/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-ibm">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fas fa-cloud text-4xl text-gray-400 group-hover:text-ibm transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-ibm transition-colors">Cloud Essentials</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">IBM</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Core concepts of Cloud Computing and IBM Cloud services.</p>
-                </a>
-                <a href="https://www.credly.com/badges/855c96d7-b043-4401-b0d1-eb443349d731/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-orange-400">
-                    <div class="flex items-center gap-4 mb-4">
-                        <i class="fas fa-robot text-4xl text-gray-400 group-hover:text-orange-400 transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-orange-400 transition-colors">Claude Certified Associate</h3>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundations · Anthropic</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4">Foundational proficiency in working with Claude models and the Anthropic ecosystem.</p>
-                </a>
+
+                <!-- Claude Developer -->
                 <a href="https://www.credly.com/badges/ca565db2-3e46-4e9b-a37e-062504ed5df2/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-orange-400">
                     <div class="flex items-center gap-4 mb-4">
                         <i class="fas fa-code text-4xl text-gray-400 group-hover:text-orange-400 transition-colors"></i>
@@ -399,126 +348,114 @@ Index · HTML
                             <p class="text-xs text-gray-500 uppercase tracking-widest">Foundations · Anthropic</p>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm mb-4">Foundational developer skills for building applications with the Claude API.</p>
+                    <p class="text-gray-400 text-sm">Foundational developer skills for building applications with the Claude API.</p>
                 </a>
+
+                <!-- Claude Associate -->
+                <a href="https://www.credly.com/badges/855c96d7-b043-4401-b0d1-eb443349d731/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-orange-400">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-robot text-4xl text-gray-400 group-hover:text-orange-400 transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-orange-400 transition-colors">Claude Certified Associate</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundations · Anthropic</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Foundational proficiency working with Claude models and the Anthropic ecosystem.</p>
+                </a>
+
+                <!-- AWS Solutions Architect -->
+                <a href="https://www.credly.com/badges/e6413908-d25b-493b-9151-98987b39e550/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Solutions Architect</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Associate · AWS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Designing distributed systems and scalable architectures on AWS.</p>
+                </a>
+
+                <!-- AWS Developer -->
+                <a href="https://www.credly.com/badges/dc0fc0a6-a42e-4cb4-aa4b-d675bc5a89b9/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Certified Developer</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Associate · AWS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Developing and maintaining AWS-based applications and services.</p>
+                </a>
+
+                <!-- AWS AI Practitioner -->
+                <a href="https://www.credly.com/badges/d71cbe60-51d3-4e68-9955-3fafe4f9b16a/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-purple-500">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-brain text-4xl text-gray-400 group-hover:text-purple-500 transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-purple-500 transition-colors">AI Practitioner</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundational · AWS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">AI/ML concepts and Generative AI implementation on AWS.</p>
+                </a>
+
+                <!-- AWS Cloud Practitioner -->
+                <a href="https://www.credly.com/badges/85faf502-0bdb-47d7-bf6f-bf940bce0cf4/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-aws">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fab fa-aws text-4xl text-gray-400 group-hover:text-aws transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-aws transition-colors">Cloud Practitioner</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Foundational · AWS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Broad understanding of the AWS Cloud platform and services.</p>
+                </a>
+
+                <!-- GCP GenAI Leader -->
+                <a href="https://www.credly.com/badges/3fb404cf-a1da-42dc-9ec6-7b09e8400dd3/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-google">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fab fa-google text-4xl text-gray-400 group-hover:text-google transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-google transition-colors">GenAI Leader</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Google Cloud</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Leadership-level understanding of Generative AI concepts on Google Cloud.</p>
+                </a>
+
+                <!-- IBM Cloud Essentials -->
+                <a href="https://www.credly.com/badges/6020ca1c-2485-4fc2-9004-b74f3aa79a71/public_url" target="_blank" class="cert-card p-6 rounded-xl group hover:border-ibm">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-cloud text-4xl text-gray-400 group-hover:text-ibm transition-colors"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-ibm transition-colors">Cloud Essentials</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">IBM</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Core concepts of Cloud Computing and IBM Cloud services.</p>
+                </a>
+
             </div>
         </div>
     </section>
- 
-    <section id="projects" class="py-20 bg-black/30">
-        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-tech">05.</span> Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-brain text-4xl text-purple-400"></i>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/kunalkad1904/aws-genai-validation" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">GenAI Validation Automation</h3>
-                        <p class="text-gray-400 text-sm mb-6">
-                            Winner of TCS AI Challenge. An automated validation workflow using AWS Bedrock (Claude), Lambda, and Python that reduced manual review time by 25%.
-                        </p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl overflow-hidden group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-sync text-4xl text-blue-400"></i>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/kunalkad1904/springboot-cicd-pipeline" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-tech transition-colors">CI/CD Pipeline Automation</h3>
-                        <p class="text-gray-400 text-sm mb-6">
-                            A complete Jenkins and AWS CodePipeline setup for Spring Boot applications. Reduced deployment time from 2 hours to 15 minutes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-    <section id="hobbies" class="py-20">
-        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-pink-500">06.</span> Life & Hobbies</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                
-                <div class="lg:col-span-2 space-y-4">
-                    <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-camera text-tech mr-2"></i> Photography</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto md:h-96">
-                        <div class="photo-card rounded-2xl md:col-span-1 md:row-span-2 relative group h-64 md:h-full">
-                            <img src="photo1.jpg" alt="Photography 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors"></div>
-                        </div>
-                        
-                        <div class="photo-card rounded-2xl relative group h-44">
-                            <img src="photo2.jpg" alt="Photography 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="photo-card rounded-2xl relative group h-44">
-                            <img src="photo3.jpg" alt="Photography 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                    </div>
-                </div>
- 
-                <div class="space-y-4">
-                    <h3 class="text-xl font-bold text-white mb-4">Beyond the Code</h3>
-                    
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-pink-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500">
-                            <i class="fas fa-bicycle text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Cycling</h4>
-                            <p class="text-xs text-gray-400">Weekend explorer & fitness enthusiast.</p>
-                        </div>
-                    </div>
- 
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-blue-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
-                            <i class="fas fa-book-open text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Reading</h4>
-                            <p class="text-xs text-gray-400">Tech blogs, sci-fi, and self-improvement.</p>
-                        </div>
-                    </div>
- 
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-orange-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
-                            <i class="fas fa-basketball-ball text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Basketball</h4>
-                            <p class="text-xs text-gray-400">Team player on and off the court.</p>
-                        </div>
-                    </div>
- 
-                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-purple-500 transition-colors">
-                        <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500">
-                            <i class="fas fa-video text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white">Content Creation</h4>
-                            <p class="text-xs text-gray-400">Sharing knowledge & visual storytelling.</p>
-                        </div>
-                    </div>
- 
-                </div>
-            </div>
-        </div>
-    </section>
- 
-    <section id="awards" class="py-20 bg-black/30">
+
+    <!-- AWARDS -->
+    <section id="awards" class="py-20">
         <div class="max-w-5xl mx-auto px-6 scroll-element animate-fade-in">
-            <h2 class="text-3xl font-bold mb-10 text-white"><span class="text-gold">07.</span> Honors & Awards</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card p-6 rounded-xl border border-gold/20 hover:border-gold transition-all">
-                    <i class="fas fa-lightbulb text-3xl text-gold mb-3"></i>
+            <h2 class="text-3xl font-bold mb-10 text-white"><span class="text-gold">06.</span> Honors & Awards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-xl border border-gold/30 hover:border-gold transition-all">
+                    <i class="fas fa-crown text-3xl text-gold mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">TCS AI Challenge Winner</h3>
+                    <p class="text-gray-400 text-sm mt-2">Won for building a GenAI validation automation on AWS Bedrock that saved 8 hours of manual work per week.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold transition-all">
+                    <i class="fas fa-medal text-3xl text-silver mb-3" style="color:#C0C0C0"></i>
+                    <h3 class="text-lg font-bold text-white">Engineer Excellence Expo 2026</h3>
+                    <p class="text-gray-400 text-sm mt-2">Runner Up at TCS Engineer Excellence Expo Pune 2026 for the Azure AI Foundry Code Assist Agent.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-gray-700 hover:border-gold transition-all">
+                    <i class="fas fa-lightbulb text-3xl text-yellow-400 mb-3"></i>
                     <h3 class="text-lg font-bold text-white">TCS Innovation</h3>
                     <p class="text-gray-400 text-sm mt-2">Recognized for driving creative and impactful innovation within the organization.</p>
                 </div>
@@ -540,160 +477,143 @@ Index · HTML
             </div>
         </div>
     </section>
- 
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="py-20 bg-black/30">
+        <div class="max-w-6xl mx-auto px-6 scroll-element animate-fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-white"><span class="text-pink-500">07.</span> Life & Hobbies</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-camera text-tech mr-2"></i>Photography</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto md:h-96">
+                        <div class="photo-card rounded-2xl md:col-span-1 md:row-span-2 relative group h-64 md:h-full">
+                            <img src="photo1.jpg" alt="Photography 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors"></div>
+                        </div>
+                        <div class="photo-card rounded-2xl relative group h-44">
+                            <img src="photo2.jpg" alt="Photography 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="photo-card rounded-2xl relative group h-44">
+                            <img src="photo3.jpg" alt="Photography 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4">Beyond the Code</h3>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-pink-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500">
+                            <i class="fas fa-bicycle text-xl"></i>
+                        </div>
+                        <div><h4 class="font-bold text-white">Cycling</h4><p class="text-xs text-gray-400">Weekend explorer & fitness enthusiast.</p></div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-blue-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
+                            <i class="fas fa-book-open text-xl"></i>
+                        </div>
+                        <div><h4 class="font-bold text-white">Reading</h4><p class="text-xs text-gray-400">Tech blogs, sci-fi, and self-improvement.</p></div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-orange-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                            <i class="fas fa-basketball-ball text-xl"></i>
+                        </div>
+                        <div><h4 class="font-bold text-white">Basketball</h4><p class="text-xs text-gray-400">Team player on and off the court.</p></div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-purple-500 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500">
+                            <i class="fas fa-video text-xl"></i>
+                        </div>
+                        <div><h4 class="font-bold text-white">Content Creation</h4><p class="text-xs text-gray-400">Sharing knowledge & visual storytelling.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="py-24 text-center">
         <div class="max-w-2xl mx-auto px-6 scroll-element animate-fade-in">
             <h2 class="text-4xl font-bold mb-6 text-white">Let's Connect</h2>
-            <p class="text-gray-400 mb-10">
-                I'm open to opportunities in Cloud Engineering and GenAI. Feel free to reach out!
-            </p>
-            
+            <p class="text-gray-400 mb-10">Open to AI Engineering, GenAI, and Azure AI Foundry roles. Feel free to reach out!</p>
             <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
-                <a href="Kunal_Kadav_Cloud_Engineer_Resume.pdf" download class="bg-gray-800 border border-gray-600 hover:bg-gray-700 text-white transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
+                <a href="Kunal_Kadav_Resume.pdf" download class="bg-gray-800 border border-gray-600 hover:bg-gray-700 text-white transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
                     <i class="fas fa-file-download"></i> Download CV
                 </a>
-                
-                <a href="/cdn-cgi/l/email-protection#9ff4eaf1fef3f4fefbfee9b1e8f0edf4dff8f2fef6f3b1fcf0f2" class="bg-white text-black hover:bg-tech transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
+                <a href="mailto:kunalkadav.work@gmail.com" class="bg-white text-black hover:bg-tech transition-all px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2">
                     <i class="far fa-envelope"></i> Say Hello
                 </a>
             </div>
- 
             <div class="flex justify-center gap-8">
-                <a href="https://github.com/kunalkadav" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/kunal-kadav-7b85111a0" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.credly.com/users/kunal-kadav" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="fas fa-certificate"></i></a>
             </div>
             <footer class="mt-20 text-gray-600 text-sm">
                 <p>&copy; 2025 Kunal Kadav.</p>
             </footer>
         </div>
     </section>
- 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Typewriter Effect
-        const words = ["Cloud Engineer.", "AWS Certified.", "GenAI Practitioner."];
+
+    <script>
+        const words = ["AI / ML Engineer.", "Azure AI Foundry.", "AWS Cloud Engineer.", "GenAI Builder.", "TCS AI Challenge Winner."];
         let i = 0;
-        let timer;
- 
         function typeWriter() {
-            const heading = document.getElementById("typewriter");
+            const el = document.getElementById("typewriter");
             const word = words[i];
-            const current = heading.textContent;
- 
-            if (!heading.classList.contains("deleting")) {
-                if (current.length < word.length) {
-                    heading.textContent = word.substring(0, current.length + 1);
-                    timer = setTimeout(typeWriter, 100);
-                } else {
-                    heading.classList.add("deleting");
-                    timer = setTimeout(typeWriter, 2000);
-                }
+            const cur = el.textContent;
+            if (!el.classList.contains("deleting")) {
+                if (cur.length < word.length) { el.textContent = word.substring(0, cur.length + 1); setTimeout(typeWriter, 100); }
+                else { el.classList.add("deleting"); setTimeout(typeWriter, 2000); }
             } else {
-                if (current.length > 0) {
-                    heading.textContent = word.substring(0, current.length - 1);
-                    timer = setTimeout(typeWriter, 50);
-                } else {
-                    heading.classList.remove("deleting");
-                    i = (i + 1) % words.length;
-                    timer = setTimeout(typeWriter, 500);
-                }
+                if (cur.length > 0) { el.textContent = word.substring(0, cur.length - 1); setTimeout(typeWriter, 50); }
+                else { el.classList.remove("deleting"); i = (i + 1) % words.length; setTimeout(typeWriter, 500); }
             }
         }
- 
-        // Scroll Animation
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
- 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
- 
-        document.querySelectorAll('.scroll-element').forEach((el) => {
-            observer.observe(el);
-        });
- 
-        // Start Typewriter
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-element').forEach(el => observer.observe(el));
         document.addEventListener('DOMContentLoaded', typeWriter);
- 
-        // Particles
+
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
- 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
- 
         class Particle {
             constructor() { this.reset(); }
             reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
+                this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 2 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.4;
-                this.speedY = (Math.random() - 0.5) * 0.4;
+                this.speedX = (Math.random() - 0.5) * 0.4; this.speedY = (Math.random() - 0.5) * 0.4;
                 this.opacity = Math.random() * 0.5 + 0.1;
-                const colors = ['#00D1FF', '#7C3AED', '#FF9900', '#EC4899', '#ffffff'];
-                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.color = ['#00D1FF','#7C3AED','#FF9900','#EC4899','#0078D4','#ffffff'][Math.floor(Math.random()*6)];
                 this.pulse = Math.random() * Math.PI * 2;
             }
             update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                this.pulse += 0.02;
+                this.x += this.speedX; this.y += this.speedY; this.pulse += 0.02;
                 this.currentOpacity = this.opacity * (0.6 + 0.4 * Math.sin(this.pulse));
                 if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
             }
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = this.currentOpacity;
-                ctx.fill();
-                ctx.globalAlpha = 1;
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color; ctx.globalAlpha = this.currentOpacity; ctx.fill(); ctx.globalAlpha = 1;
             }
         }
- 
-        for (let i = 0; i < 120; i++) particles.push(new Particle());
- 
+        for (let j = 0; j < 120; j++) particles.push(new Particle());
         function drawConnections() {
             for (let a = 0; a < particles.length; a++) {
                 for (let b = a + 1; b < particles.length; b++) {
-                    const dx = particles[a].x - particles[b].x;
-                    const dy = particles[a].y - particles[b].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const dx = particles[a].x - particles[b].x, dy = particles[a].y - particles[b].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
                     if (dist < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.strokeStyle = '#00D1FF';
-                        ctx.globalAlpha = (1 - dist / 100) * 0.08;
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                        ctx.globalAlpha = 1;
+                        ctx.beginPath(); ctx.moveTo(particles[a].x, particles[a].y); ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.strokeStyle = '#00D1FF'; ctx.globalAlpha = (1 - dist/100) * 0.08; ctx.lineWidth = 0.5; ctx.stroke(); ctx.globalAlpha = 1;
                     }
                 }
             }
         }
- 
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            drawConnections();
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
+        function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); drawConnections(); requestAnimationFrame(animate); }
+        animate();
     </script>
 </body>
 </html>
- 
